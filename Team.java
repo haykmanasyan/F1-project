@@ -34,6 +34,7 @@ public class Team {
         totalPoints = 0;
 
         for (Driver driver : drivers) {
+            
             totalPoints += driver.getPoints();
         }
     }

@@ -8,11 +8,13 @@ public class Season {
 
     private List<Driver> driverStandings;
     private List<Team> constructorStandings;
+    private List<Race> races;
 
     public Season() {
 
         driverStandings = new ArrayList<>();
         constructorStandings = new ArrayList<>();
+        races = new ArrayList<>();
     }
 
     public void addDriver(Driver driver) {
@@ -23,6 +25,11 @@ public class Season {
     public void addTeam(Team team) {
 
         constructorStandings.add(team);
+    }
+
+    public void addRace(Race race) {
+
+        races.add(race);
     }
 
     public void updateDriverStandings() {
@@ -73,6 +80,16 @@ public class Season {
             Team team = constructorStandings.get(i);
             System.out.println((i + 1) + ". " + team.getName() + " - Points: " + team.getTotalPoints());
         }
+    }
+
+    public void calculatePointsAndStandings() {
+        
+        // Calculate points and update standings for all races
+        for (Race race : races) {
+            race.awardPoints();
+        }
+        updateDriverStandings();
+        updateConstructorStandings();
     }
 
 }
