@@ -39,7 +39,7 @@ public class Team {
     }
 
     public int getTotalPoints() {
-        
+
         return totalPoints;
     }
 }

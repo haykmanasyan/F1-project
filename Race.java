@@ -5,10 +5,12 @@ public class Race {
     
     private List<Driver> finishingOrder;
     private Driver fastestLapDriver;
+    private String name;
 
-    public Race() {
-
+    public Race(String title) {
+        
         finishingOrder = new ArrayList<>();
+        this.name = title;
     }
 
     public void addDriver(Driver driver) {
@@ -27,7 +29,12 @@ public class Race {
     }
 
     public void setFastestLapDriver(Driver driver) {
-        
+
         fastestLapDriver = driver;
+    }
+
+    public String getName() {
+        
+        return name;
     }
 }
